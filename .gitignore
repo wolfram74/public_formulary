@@ -2,3 +2,4 @@
 /config/application.yml
 /log/development.log
 /log/test.log
+/tmp
