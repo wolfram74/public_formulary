@@ -7,7 +7,18 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<% if user_signed_in? %>
+  <h3>
+    <%= link_to 'Fuggin\' log out.', controller: 'devise/sessions', action: 'destroy', method: :delete %>
+  </h3>
+<% else %>
+  <h3>
+    <%= link_to 'Fuggin\' log in.', controller: 'devise/sessions', action: 'new' %>
+    or
+    <%= link_to 'Fuggin\' register.', controller: 'devise/registrations', action: 'new' %>
 
+  </h3>
+<% end %>
 <%= yield %>
 
 </body>
