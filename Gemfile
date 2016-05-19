@@ -49,6 +49,6 @@ end
 gem 'rails_12factor', group: :production
 gem 'figaro'
 group :development, :test do
-  gem 'rspec-rails', '~> 3.0'
+  gem 'rspec-rails', '~> 3.4'
   gem 'jasmine-rails'
 end
