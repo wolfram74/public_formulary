@@ -1,5 +1,5 @@
 /config/secrets.yml
 /config/application.yml
 /log/development.log
-/log/test.log
+/log
 /tmp
