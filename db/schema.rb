@@ -11,16 +11,35 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160518234026) do
+ActiveRecord::Schema.define(version: 20160604180029) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "contributors", force: :cascade do |t|
+    t.integer  "project_id"
+    t.integer  "user_id"
+    t.boolean  "owner"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "equations", force: :cascade do |t|
     t.string   "label"
     t.string   "latex"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.string   "description"
+    t.integer  "project_id"
+  end
+
+  create_table "projects", force: :cascade do |t|
+    t.string   "title"
+    t.string   "description"
+    t.boolean  "private"
+    t.integer  "parent_project_id"
+    t.datetime "created_at",        null: false
+    t.datetime "updated_at",        null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -36,6 +55,7 @@ ActiveRecord::Schema.define(version: 20160518234026) do
     t.inet     "last_sign_in_ip"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
+    t.string   "username"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
