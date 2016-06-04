@@ -47,4 +47,5 @@ end
 group :development, :test do
   gem 'rspec-rails', '~> 3.4'
   gem 'jasmine-rails'
+  gem 'shoulda-matchers'
 end
