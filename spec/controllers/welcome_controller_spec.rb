@@ -11,14 +11,9 @@ RSpec.describe WelcomeController, type: :controller do
       expect(response.status).to eq(200)
       expect(response.body).to include('welcome')
     end
-    it 'can reference the home page explicitly' do
-      get("/")
-      expect(response.status).to eq(200)
-      expect(response.body).to include('welcome')
-    end
   end
   describe 'authentication' do
-    xit 'can tell when a user is authenticated' do
+    it 'can tell when a user is authenticated' do
 
     end
     xit 'can tell when a user isn\'t authenticated' do
